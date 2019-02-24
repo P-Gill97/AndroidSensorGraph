@@ -4,15 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-
-        <ListView
-            android:id="@+id/main_sensor_list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
-
-        </ListView>
+    tools:context=".ThermometerActivity">
 
 </android.support.constraint.ConstraintLayout>

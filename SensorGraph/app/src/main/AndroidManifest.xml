@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BarometerActivity"></activity>
+        <activity android:name=".BarometerActivity" />
+        <activity android:name=".ThermometerActivity"></activity>
     </application>
 
 </manifest>
