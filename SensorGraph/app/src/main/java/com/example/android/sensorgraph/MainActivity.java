@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
                 if(i ==0){
                     barometerIntent(view);
                 }
-                if(i ==0){
-
+                if(i ==1){
+                    thermometerIntent(view);
                 }
             }
         });

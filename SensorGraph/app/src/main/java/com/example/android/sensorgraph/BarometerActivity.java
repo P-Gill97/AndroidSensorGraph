@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.jjoe64.graphview.GraphView;
+
 public class BarometerActivity extends AppCompatActivity {
 
     private SensorManager manager;
@@ -18,7 +20,7 @@ public class BarometerActivity extends AppCompatActivity {
         public void onSensorChanged(SensorEvent event) {
             float[] values = event.values;
             tv.setText(String.format("%.2f Millibar",values[0]));
-            // add graph dtat here.
+            // add changes to graphview here.
 
         }
 
@@ -34,7 +36,7 @@ public class BarometerActivity extends AppCompatActivity {
         tv = findViewById(R.id.barometer_text_display);
         manager = (SensorManager) getSystemService(SENSOR_SERVICE);
         barometerSensor = manager.getDefaultSensor(Sensor.TYPE_PRESSURE);
-
+        GraphView graph = new GraphView()
     }
 
     @Override
