@@ -9,18 +9,22 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.Viewport;
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
 
 public class BarometerActivity extends AppCompatActivity {
 
     private SensorManager manager;
     private Sensor barometerSensor;
     private TextView tv;
+    private LineGraphSeries<DataPoint>  points;
     private SensorEventListener eventListener = new SensorEventListener() {
         @Override
         public void onSensorChanged(SensorEvent event) {
             float[] values = event.values;
             tv.setText(String.format("%.2f Millibar",values[0]));
-            // add changes to graphview here.
+            // add changes to graphview here
 
         }
 
@@ -36,7 +40,18 @@ public class BarometerActivity extends AppCompatActivity {
         tv = findViewById(R.id.barometer_text_display);
         manager = (SensorManager) getSystemService(SENSOR_SERVICE);
         barometerSensor = manager.getDefaultSensor(Sensor.TYPE_PRESSURE);
-        GraphView graph = new GraphView()
+
+        GraphView graph = (GraphView) findViewById(R.id.barometer_graph);
+        graph.addSeries(points);
+        Viewport viewport = graph.getViewport();
+        viewport.setYAxisBoundsManual(true);
+        viewport.setMinY(0);
+        viewport.setMaxY(10);
+        viewport.setScrollable(true);
+    }
+    // add data to graph
+    private void addData(){
+        // resume here
     }
 
     @Override
